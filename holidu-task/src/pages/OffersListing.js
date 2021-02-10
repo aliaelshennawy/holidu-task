@@ -1,13 +1,13 @@
 import  React, { useEffect } from "react";
-import { connect } from 'react-redux'
+import { connect ,  useDispatch} from 'react-redux'
 import { getOffers } from '../actions';
 import Offers from "../components/offers";
 
 const OffersListing = ({offersList}) => {
-
+  const dispatch = useDispatch()
   useEffect(() => {
-    getOffers();
-  });
+    dispatch(getOffers());
+  }, [dispatch])
   return (
     <section>
       <Offers offersList={offersList}/>

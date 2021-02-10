@@ -1,17 +1,18 @@
 import  React from "react";
+import { OffersCard } from "./styles";
 
 const Offers = ({ offersList }) => {
-  console.log('OfferListInComponent', offersList);
+
   return (
     <section>
       <h2>Offers</h2>
-      <ul>
+      {offersList && <ul>
         {offersList.map((offer) => (
-          <li key={offer.id}>
+          <OffersCard key={offer.id}>
             <h1>{offer.details.name}</h1>
-          </li>
+          </OffersCard>
         ))}
-      </ul>
+      </ul>}
     </section>
   );
 };
