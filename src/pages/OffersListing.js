@@ -2,6 +2,7 @@ import  React, { useEffect } from "react";
 import { connect ,  useDispatch} from 'react-redux'
 import { getOffers } from '../actions';
 import Offers from "../components/offers";
+import Searchbar from "../components/searchBar";
 
 const OffersListing = ({offersList}) => {
   const dispatch = useDispatch()
@@ -10,6 +11,7 @@ const OffersListing = ({offersList}) => {
   }, [dispatch])
   return (
     <section>
+      <Searchbar searchData={offersList}/>
       <Offers offersList={offersList}/>
     </section>
   );
