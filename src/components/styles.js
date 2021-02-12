@@ -7,7 +7,20 @@ export const OffersWrapper = styled.section `
     font-family: 'Roboto', serif;
     font-size: 1.125rem; 
   }
-  a {
+  .swiper-container {
+    width: 40%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #fff;
+      &:after {
+        font-size: 20px;
+      }
+    }
+  }
+  .offer-wrapper {
     display: flex;
   }
   li + li {
@@ -61,6 +74,26 @@ export const OffersCard = styled.li`
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      a {
+        text-align: center;
+        font-size: 1rem;
+        dispaly: inline-block;
+        color: #fff;
+        border: none;
+        font-weight: 500;
+        height: 45px;
+        line-height: 45px;
+        width: 100%;
+        line-height: 40px;
+        border-radius: 0.5rem;
+        background-color: #FF6064;
+        text-transform: uppercase;
+        min-width: 200px;
+        margin: 0 auto;
+        &:hover {
+          background-color: #FF3A3D;
+        }
+      }
     }
     span {
       text-align: right;
@@ -91,23 +124,5 @@ export const OffersCard = styled.li`
     display: flex;
     color: #1D1D1D;
     line-height: 40px;
-  }
-  button {
-    font-size: 1rem;
-    color: #fff;
-    border: none;
-    font-weight: 500;
-    height: 45px;
-    line-height: 45px;
-    width: 100%;
-    line-height: 40px;
-    border-radius: 0.5rem;
-    background-color: #FF6064;
-    text-transform: uppercase;
-    min-width: 200px;
-    margin: 0 auto;
-    &:hover {
-      background-color: #FF3A3D;
-    }
   }
 `;
