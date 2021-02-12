@@ -11,7 +11,7 @@ const OffersListing = ({offersList}) => {
   }, [dispatch])
   return (
     <section>
-      <Searchbar searchData={offersList}/>
+      {/* <Searchbar searchData={offersList}/> */}
       <Offers offersList={offersList}/>
     </section>
   );
