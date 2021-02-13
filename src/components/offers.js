@@ -20,7 +20,6 @@ const Offers = ({ offersList }) => {
                     <SwiperSlide>
                       <img
                         src={photo.t}
-                        srcSet={photo.m}
                         alt={offer.shortName}
                       />
                     </SwiperSlide>
