@@ -1,4 +1,4 @@
-# This app is created to list best offers available for your upcoming travel
+# An app for comparing properties for your upcoming vacation
 
 [Check application demo](https://holidu-task.web.app/)
 
