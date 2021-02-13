@@ -141,6 +141,9 @@ export const OffersCard = styled.li`
     line-height: 40px;
   }
   @media (max-width: 768px) {
+    .call-to-action {
+      margin-top: 20px;
+    }
     img {
       border-bottom-left-radius: 0;
       border-top-right-radius: 0.5rem;
@@ -227,7 +230,6 @@ export const SearchWrapper = styled.div`
     }
     .call-to-action {
       width: 100%;
-      margin-top: 20px;
     }
     .small-input {
       width: 100%;
