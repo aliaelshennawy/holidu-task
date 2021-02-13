@@ -39,8 +39,8 @@ const Offers = ({ offersList }) => {
                     </a>
                     <div className="appartment-details-wrapper">
                       <span>
-                        {offer?.details?.bedroomsCount} bedroom ,{" "}
-                        {offer?.details?.guestsCount} pers.
+                        {offer?.details?.bedroomsCount} bedroom,{" "}
+                        {offer?.details?.guestsCount} guests.
                       </span>
                     </div>
                     <Rate disabled defaultValue={offer.rating.value} />

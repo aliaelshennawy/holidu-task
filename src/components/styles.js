@@ -3,7 +3,7 @@ import pin from '../assets/pin.svg';
 
 export const OffersWrapper = styled.section `
   h1 {
-    font-family: 'Roboto', serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.125rem; 
   }
   .swiper-slide {
@@ -42,7 +42,7 @@ export const OffersWrapper = styled.section `
   }
 `;
 export const OffersCard = styled.li`
-  font-family: 'Roboto', serif;
+  font-family: 'Noto Sans JP', sans-serif;
   list-style: none;
   border: solid 1px #DADADA;
   border-radius: 0.5rem;
@@ -66,6 +66,10 @@ export const OffersCard = styled.li`
     font-size: 1.5rem;
     color: #1D1D1D;
     font-weight: bold;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .check-more:after {
     content: '';
@@ -92,7 +96,7 @@ export const OffersCard = styled.li`
         dispaly: inline-block;
         color: #fff;
         border: none;
-        font-weight: 500;
+        font-weight: bold;
         height: 45px;
         line-height: 45px;
         width: 100%;
@@ -137,7 +141,10 @@ export const OffersCard = styled.li`
     line-height: 40px;
   }
   @media (max-width: 768px) {
-
+    img {
+      border-bottom-left-radius: none;
+      border-top-right-radius: 0.5rem;
+    }
     .offer-wrapper {
       flex-direction: column;
     }
@@ -165,6 +172,10 @@ export const SearchWrapper = styled.div`
   .ant-form {
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
+  }
+  .ant-form-item-explain.ant-form-item-explain-error {
+    max-width: 120px;
   }
   .ant-form-item + .ant-form-item {
     margin-inline-start: 20px;
@@ -224,7 +235,7 @@ export const LoadingWrapper = styled.div`
   h1 {
     margin-bottom: 20px;
     color: #0C6EEF;
-    font-family: 'Roboto', serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: bold;
   }
 `

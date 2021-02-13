@@ -95,7 +95,7 @@ const Searchbar = () => {
           name="adults"
           rules={[{ required: true, message: "Please enter number of adults" }]}
         >
-          <Input placeholder="adults" className="small-input" type="number" />
+        <Input placeholder="adults" className="small-input" type="number" min={1} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" className="call-to-action" htmlType="submit">

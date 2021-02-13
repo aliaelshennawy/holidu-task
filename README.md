@@ -13,7 +13,7 @@
 
 
 # Main Functionalities
-  1. Search screen where you can choose the location you want to go to
+  1. Search screen where you can choose your destination
   2. Enter travel details such as checkin date, checkout date and number of adults
   3. Click search and voila.
   4. A list of all available offers will be available to guarantee the best price and option
