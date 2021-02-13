@@ -5,7 +5,7 @@
 # Used libraries
   1. Create React App: used for faster setup for a react app.
   2. Redux-Saga: for storing and managing state from a single source of truth.
-  3. Axios: for hadnelling api calls.
+  3. Axios: for handeling api calls.
   4. Antd: for handeling some of the UI elements in the application.
   5. Styled Components: for handeling styles and for better styles isolation.
   6. Swiper: used for application sliders.
@@ -14,12 +14,12 @@
 
 # Main Functionalities
   1. Search screen where you can choose the location you want to go to
-  2. Enter travel details such as chckin date, checkout date and number of adults
+  2. Enter travel details such as checkin date, checkout date and number of adults
   3. Click search and voila.
   4. A list of all available offers will be available to guarantee the best price and option
   5. Check offer details and swipe between available offer images and view location on map
-  6. Navigate to offer and continue booking
-  6. Check offers from your mobile/desktop or any screen size as it is responsive.
+  6. Navigate to view offer and continue booking from the offer source
+  7. Check offers from your mobile/desktop or any screen size as it is responsive.
 
 # Getting Started with Create React App
 
