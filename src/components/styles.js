@@ -142,8 +142,15 @@ export const OffersCard = styled.li`
   }
   @media (max-width: 768px) {
     img {
-      border-bottom-left-radius: none;
+      border-bottom-left-radius: 0;
       border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      width: 100%;
+      object-fit: contain;
+    }
+    .offer-name {
+      width: 100%;
+      white-space: initial;
     }
     .offer-wrapper {
       flex-direction: column;
@@ -220,6 +227,7 @@ export const SearchWrapper = styled.div`
     }
     .call-to-action {
       width: 100%;
+      margin-top: 20px;
     }
     .small-input {
       width: 100%;
