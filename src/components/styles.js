@@ -6,6 +6,9 @@ export const OffersWrapper = styled.section `
     font-family: 'Roboto', serif;
     font-size: 1.125rem; 
   }
+  .swiper-slide {
+    overflow: hidden;
+  }
   .swiper-container {
     width: 40%;
     img {
