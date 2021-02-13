@@ -18,6 +18,7 @@
   3. Click search and voila.
   4. A list of all available offers will be available to guarantee the best price and option
   5. Check offer details and swipe between available offer images and view location on map
+  6. Navigate to offer and continue booking
   6. Check offers from your mobile/desktop or any screen size as it is responsive.
 
 # Getting Started with Create React App
