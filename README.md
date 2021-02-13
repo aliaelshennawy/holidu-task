@@ -1,7 +1,7 @@
 # This app is created to list best offers available for your upcoming travel
 
 [Check application demo](https://holidu-task.web.app/)
-![Demo](https://gifyu.com/image/VcTp)
+![Demo](https://s2.gifyu.com/images/medium-demo.gifaya83320011)
 
 # Used libraries
   1. Create React App: used for faster setup for a react app.
