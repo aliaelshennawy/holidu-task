@@ -39,7 +39,7 @@ const Offers = ({ offersList }) => {
                     </a>
                     <div className="appartment-details-wrapper">
                       <span>
-                        {offer?.details?.bedroomsCount} bedroom.,{" "}
+                        {offer?.details?.bedroomsCount} bedroom ,{" "}
                         {offer?.details?.guestsCount} pers.
                       </span>
                     </div>
