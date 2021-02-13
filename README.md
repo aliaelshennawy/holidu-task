@@ -3,7 +3,6 @@
 [Check application demo](https://holidu-task.web.app/)
 
 # Used libraries
-Markup :
   1. Create React App: used for faster setup for a react app.
   2. Redux-Saga: for storing and managing state from a single source of truth.
   3. Axios: for hadnelling api calls.
@@ -14,7 +13,6 @@ Markup :
 
 
 # Main Functionalities
- Markup :
   1. Search screen where you can choose the location you want to go to
   2. Enter travel details such as chckin date, checkout date and number of adults
   3. Click search and voila.
