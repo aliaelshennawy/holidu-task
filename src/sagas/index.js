@@ -1,10 +1,14 @@
 import axios from 'axios'
-import { call, put, all, takeLatest } from 'redux-saga/effects'
+import { call, put, all, takeLatest, select } from 'redux-saga/effects'
+import { getOffers , getQuery} from '../actions'
+
+
 
 function* fetchOffers() {
+  let query = yield select(getQuery)
   try {
-    const { data } = yield call(axios.get, 'https://api.holidu.com/old/rest/v6/search/offers?searchId=46fdd790-e0a7-4b96-98b5-6be594a8e8b1&searchTerm=Mallorca%2C+Spanien&adults=2&domainId=2&locale=de-DE&currency=EUR', {
-      // params: {searchTerm: 'italy', adults: 2}
+    const { data } = yield call(axios.get, 'https://api.holidu.com/old/rest/v6/search/offers', {
+      params: { searchTerm: query }
   })
     yield put({ type: "OFFERS_RECEIVED", data})
   } catch (e) {

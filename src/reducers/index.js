@@ -3,6 +3,8 @@ const reducer = (state = {}, action) => {
   switch (action.type) {
     case 'GET_OFFERS':
          return { ...state, loading: true };
+     case 'SET_SEARCH_QUERY':
+          return {...state, query: action.query}
     case 'OFFERS_RECEIVED':
          return { ...state, offers: action.data.offers , loading: false }
     default: 

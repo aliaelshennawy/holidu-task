@@ -1,29 +1,16 @@
 import  React, { useEffect } from "react";
-import { connect ,  useDispatch} from 'react-redux'
-import { getOffers } from '../actions';
+import { withRouter, Link } from "react-router-dom";
 import Offers from "../components/offers";
-import Searchbar from "../components/searchBar";
+import { useSelector} from "react-redux";
 
-const OffersListing = ({offersList}) => {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(getOffers());
-  }, [dispatch])
+
+const OffersListing = () => {
+  const offersList = useSelector(state => state.offers);
   return (
     <section>
-      {/* <Searchbar searchData={offersList}/> */}
       <Offers offersList={offersList}/>
     </section>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    offersList: state.offers,
-  };
-}
-const mapDispatchToProps = {
-  getOffers: getOffers,
-};
 
-export default connect(mapStateToProps,mapDispatchToProps)(OffersListing);
-
+export default withRouter(OffersListing);

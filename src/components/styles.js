@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import pin from '../assets/pin.svg';
-import arrow from '../assets/right-arrow.svg';
 
 export const OffersWrapper = styled.section `
   h1 {
@@ -23,11 +22,18 @@ export const OffersWrapper = styled.section `
   .offer-wrapper {
     display: flex;
   }
+  ul {
+    padding: 0;
+  }
   li + li {
     margin-block-start: 20px;
   }
   max-width: 1200px;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
 `;
 export const OffersCard = styled.li`
   font-family: 'Roboto', serif;
@@ -84,7 +90,6 @@ export const OffersCard = styled.li`
         height: 45px;
         line-height: 45px;
         width: 100%;
-        line-height: 40px;
         border-radius: 0.5rem;
         background-color: #FF6064;
         text-transform: uppercase;
@@ -124,5 +129,28 @@ export const OffersCard = styled.li`
     display: flex;
     color: #1D1D1D;
     line-height: 40px;
+  }
+  @media (max-width: 768px) {
+    .offer-wrapper {
+      flex-direction: column;
+    }
+    .card-details {
+      flex-direction: column;
+    }
+    .swiper-container {
+      width: 100%;
+    }
+    .offer-reseservations-wrapper {
+      border: none;
+      .price-wrapper {
+        padding: 0;
+      }
+      span {
+        text-align: left;
+      }
+      a {
+        width: 100%;
+      }
+    }
   }
 `;
