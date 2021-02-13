@@ -1,14 +1,16 @@
 import React, { useState, useCallback } from "react";
 import { debounce } from "lodash";
-import { useDispatch , useSelector} from "react-redux";
-import { Input, AutoComplete } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { Input, AutoComplete, Form, DatePicker, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { setSearchQuery } from "../actions";
-import { getOffers } from '../actions';
+import { getOffers } from "../actions";
+import { SearchWrapper } from './styles';
+import  moment  from 'moment';
 
 const Searchbar = () => {
   const [options, setOptions] = useState([]);
-  const offersList = useSelector(state => state.offers);
+  const offersList = useSelector((state) => state.offers);
   const dispatch = useDispatch();
   const history = useHistory();
   function handleSearchChange(e) {
@@ -20,12 +22,22 @@ const Searchbar = () => {
     []
   );
   function sendSearchQuery(query) {
-    dispatch(setSearchQuery(query));
+    dispatch(setSearchQuery({searchTerm: query}));
     dispatch(getOffers());
   }
-  function onOfferSelect() {
+  function submitFormValues(values) {
+    dispatch(setSearchQuery(
+      {
+        searchTerm: values.location,
+        adults: values.adults,
+        checkin: moment(values.checkin).format('YYYY-MM-DD'),
+        checkout:  moment(values.checkout).format('YYYY-MM-DD'),
+      }
+    ));
+    dispatch(getOffers());
     history.push("/offers");
   }
+
   // const onSearch = val => {
   //   history.push("/offers");
   // };
@@ -48,21 +60,58 @@ const Searchbar = () => {
     );
   }
   return (
-    <AutoComplete
-      dropdownMatchSelectWidth={500}
-      style={{ width: 500 }}
-      dataSource={offersList ?
-        offersList.map(renderSearchItem) :
-        defaultOptions
-      }
-      onSelect={onOfferSelect}
+    <SearchWrapper>
+    <Form
+      name="search-form"
+      onFinish={submitFormValues}
     >
-      <Input.Search
-        size="large"
-        placeholder="Where do you want to go?"
-        onChange={handleSearchChange}
-      />
-    </AutoComplete>
+      <Form.Item
+        name="location"
+        rules={[
+          { required: true, message: "Please input your travel location" },
+        ]}
+      >
+        <AutoComplete
+          dropdownMatchSelectWidth={500}
+          style={{ width: 500 }}
+          dataSource={
+            offersList ? offersList.map(renderSearchItem) : defaultOptions
+          }
+          // onSelect={onOfferSelect}
+        >
+          <Input
+            className="search-input"
+            size="large"
+            placeholder="Where do you want to go?"
+            onChange={handleSearchChange}
+          />
+        </AutoComplete>
+      </Form.Item>
+      <Form.Item
+        name="checkin"
+        rules={[{ required: true, message: "Checkin date is required" }]}
+      >
+        <DatePicker placeholder="Checkin Date" />
+      </Form.Item>
+      <Form.Item
+        name="checkout"
+        rules={[{ required: true, message: "Checkin out date is required" }]}
+      >
+        <DatePicker placeholder="Check out" />
+      </Form.Item>
+      <Form.Item
+        name="adults"
+        rules={[{ required: true, message: "Please enter number of adults" }]}
+      >
+        <Input placeholder="adults" className="small-input"  type="number"/>
+      </Form.Item>
+      <Form.Item>
+          <Button type="primary" className="call-to-action" htmlType="submit">
+            Search
+          </Button>
+        </Form.Item>
+    </Form>
+    </SearchWrapper>
   );
 };
 

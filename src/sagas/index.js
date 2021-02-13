@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { call, put, all, takeLatest, select } from 'redux-saga/effects'
-import { getOffers , getQuery} from '../actions'
+import { getQuery , getAdults , getCheckinDate , getCheckoutDate} from '../actions'
 
 
 
@@ -8,11 +8,12 @@ function* fetchOffers() {
   let query = yield select(getQuery)
   try {
     const { data } = yield call(axios.get, 'https://api.holidu.com/old/rest/v6/search/offers', {
-      params: { searchTerm: query }
+      params: query
   })
     yield put({ type: "OFFERS_RECEIVED", data})
+    return Promise.resolve('Offers Retrived Successfully');
   } catch (e) {
-    console.log(e.message)
+    return Promise.reject(e);
   }
 }
 function* actionWatcher() {

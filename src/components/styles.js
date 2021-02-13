@@ -11,6 +11,8 @@ export const OffersWrapper = styled.section `
     img {
       height: 100%;
       object-fit: cover;
+      max-height: 250px;
+      min-height: 250px;
     }
     .swiper-button-next, .swiper-button-prev {
       color: #fff;
@@ -151,6 +153,35 @@ export const OffersCard = styled.li`
       a {
         width: 100%;
       }
+    }
+  }
+`;
+export const SearchWrapper = styled.div`
+  .ant-form {
+    display: flex;
+    flex-direction: row;
+  }
+  .ant-form-item + .ant-form-item {
+    margin-inline-start: 20px;
+  }
+  .ant-picker {
+    height: 50px;
+  }
+  .large-input {
+    
+  }
+  .small-input {
+    width: 150px;
+  }
+  .call-to-action {
+    background-color: #FF6064;
+    height: 50px;
+    color: #fff;
+    width: 150px;
+    font-weight: bold;
+    border: none;
+    &:hover {
+      background-color: #FF3A3D;
     }
   }
 `;
