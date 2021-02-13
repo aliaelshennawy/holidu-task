@@ -16,7 +16,7 @@
   1. Search screen where you can choose the location you want to go to
   2. Enter travel details such as chckin date, checkout date and number of adults
   3. Click search and voila.
-  4. A list of all available offers will be available to garunte the best price and option
+  4. A list of all available offers will be available to guarante the best price and option
   5. Check offer details and swipe between available offer images and view location on map
   6. Check offers from your mobile/desktop or any screen size as it is responsive.
 
