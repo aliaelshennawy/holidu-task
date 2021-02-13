@@ -3,14 +3,14 @@
 [Check application demo](https://holidu-task.web.app/)
 
 # Used libraries
-
-Create React App: used for faster setup for a react app.
-Redux-Saga: for storing and managing state from a single source of truth.
-Axios: for hadnelling api calls.
-Antd: for handeling some of the UI elements in the application.
-Styled Components: for handeling styles and for better styles isolation.
-Swiper: used for application sliders.
-Redux-logger: for better debugging experience through application development.
+Markup :
+  1. Create React App: used for faster setup for a react app.
+  2. Redux-Saga: for storing and managing state from a single source of truth.
+  3. Axios: for hadnelling api calls.
+  4. Antd: for handeling some of the UI elements in the application.
+  5. Styled Components: for handeling styles and for better styles isolation.
+  6. Swiper: used for application sliders.
+  7. Redux-logger: for better debugging experience through application development.
 
 
 # Main Functionalities
