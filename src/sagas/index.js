@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { call, put, all, takeLatest, select } from 'redux-saga/effects'
-import { getQuery , getAdults , getCheckinDate , getCheckoutDate} from '../actions'
+import { getQuery } from '../actions'
 
 
 

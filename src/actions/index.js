@@ -7,6 +7,3 @@ export const setSearchQuery = (query) => ({
 });
 
 export const getQuery = (state) => state.query;
-export const getAdults = (state) => state.adults;
-export const getCheckinDate = (state) => state.checkin;
-export const getCheckoutDate = (state) => state.checkout;

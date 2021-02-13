@@ -1,12 +1,17 @@
 import  React, { useEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import Offers from "../components/offers";
+import Loading from '../components/loadingSpinner';
 import { useSelector} from "react-redux";
 
 
 const OffersListing = () => {
   const offersList = useSelector(state => state.offers);
-  return (
+  const loading = useSelector(state => state.loading);
+  return loading  ? (
+      <Loading/>
+    ) :
+   (
     <section>
       <Offers offersList={offersList}/>
     </section>
