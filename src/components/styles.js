@@ -212,3 +212,23 @@ export const SearchWrapper = styled.div`
     }
   }
 `;
+export const LoadingWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 20px;
+    color: #0C6EEF;
+    font-family: 'Roboto', serif;
+    font-weight: bold;
+  }
+`
+export const NoResults = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+`

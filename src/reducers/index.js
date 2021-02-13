@@ -5,6 +5,8 @@ const reducer = (state = {}, action) => {
          return { ...state, loading: true };
      case 'SET_SEARCH_QUERY':
           return {...state, query: action.query , loading: true}
+     case 'NO_OFFERS_RECIEVED':
+          return {...state, noOffers: true , loading: false}
     case 'OFFERS_RECEIVED':
          return { ...state, offers: action.data.offers , loading: false }
     default: 

@@ -10,7 +10,12 @@ function* fetchOffers() {
     const { data } = yield call(axios.get, 'https://api.holidu.com/old/rest/v6/search/offers', {
       params: query
   })
-    yield put({ type: "OFFERS_RECEIVED", data})
+    if(data.offers.length) {
+      yield put({ type: "OFFERS_RECEIVED", data})
+    }
+    else {
+      yield put({ type: "NO_OFFERS_RECIEVED"})
+    }
     return Promise.resolve('Offers Retrived Successfully');
   } catch (e) {
     return Promise.reject(e);

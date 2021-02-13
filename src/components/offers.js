@@ -18,7 +18,11 @@ const Offers = ({ offersList }) => {
                 <Swiper navigation slidesPerView={1}>
                   {offer?.photos.map((photo) => (
                     <SwiperSlide>
-                      <img src={photo.t} alt={offer.shortName} />
+                      <img
+                        src={photo.t}
+                        srcSet={photo.m}
+                        alt={offer.shortName}
+                      />
                     </SwiperSlide>
                   ))}
                 </Swiper>
@@ -54,7 +58,7 @@ const Offers = ({ offersList }) => {
                               ? `https://holidu.com${offer.outboundLink}`
                               : `https://holidu.com${offer.internalLink}`
                           }
-                          target='blank'
+                          target="blank"
                         >
                           View Offer
                         </a>
