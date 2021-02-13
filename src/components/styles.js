@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import pin from '../assets/pin.svg';
 
 export const OffersWrapper = styled.section `
-  margin-block: 40px;
   h1 {
     font-family: 'Roboto', serif;
     font-size: 1.125rem; 
@@ -32,7 +31,8 @@ export const OffersWrapper = styled.section `
     margin-block-start: 20px;
   }
   max-width: 1200px;
-  margin: 0 auto;
+  margin-block: 40px;
+  margin-inline: auto;
   @media (max-width: 768px) {
     max-width: 90%;
     margin: 40px auto;
