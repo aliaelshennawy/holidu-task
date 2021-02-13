@@ -5,11 +5,10 @@ import { Input, AutoComplete, Form, DatePicker, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { setSearchQuery } from "../actions";
 import { getOffers } from "../actions";
-import { SearchWrapper } from './styles';
-import  moment  from 'moment';
+import { SearchWrapper } from "./styles";
+import moment from "moment";
 
 const Searchbar = () => {
-  const [options, setOptions] = useState([]);
   const offersList = useSelector((state) => state.offers);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -22,25 +21,24 @@ const Searchbar = () => {
     []
   );
   function sendSearchQuery(query) {
-    dispatch(setSearchQuery({searchTerm: query}));
+    dispatch(setSearchQuery({ searchTerm: query }));
     dispatch(getOffers());
   }
   function submitFormValues(values) {
-    dispatch(setSearchQuery(
-      {
+    dispatch(
+      setSearchQuery({
         searchTerm: values.location,
         adults: values.adults,
-        checkin: moment(values.checkin).format('YYYY-MM-DD'),
-        checkout:  moment(values.checkout).format('YYYY-MM-DD'),
-      }
-    ));
+        checkin: moment(values.checkin).format("YYYY-MM-DD"),
+        checkout: moment(values.checkout).format("YYYY-MM-DD"),
+      })
+    );
     dispatch(getOffers());
     history.push("/offers");
   }
-
-  // const onSearch = val => {
-  //   history.push("/offers");
-  // };
+  function disabledDate(current) {
+    return current && current < moment();
+  }
   const defaultOptions = [
     {
       label: "",
@@ -61,56 +59,50 @@ const Searchbar = () => {
   }
   return (
     <SearchWrapper>
-    <Form
-      name="search-form"
-      onFinish={submitFormValues}
-    >
-      <Form.Item
-        name="location"
-        rules={[
-          { required: true, message: "Please input your travel location" },
-        ]}
-      >
-        <AutoComplete
-          dropdownMatchSelectWidth={500}
-          style={{ width: 500 }}
-          dataSource={
-            offersList ? offersList.map(renderSearchItem) : defaultOptions
-          }
-          // onSelect={onOfferSelect}
+      <Form name="search-form" onFinish={submitFormValues}>
+        <Form.Item
+          name="location"
+          rules={[
+            { required: true, message: "Please input your travel location" },
+          ]}
         >
-          <Input
-            className="search-input"
-            size="large"
-            placeholder="Where do you want to go?"
-            onChange={handleSearchChange}
-          />
-        </AutoComplete>
-      </Form.Item>
-      <Form.Item
-        name="checkin"
-        rules={[{ required: true, message: "Checkin date is required" }]}
-      >
-        <DatePicker placeholder="Checkin Date" />
-      </Form.Item>
-      <Form.Item
-        name="checkout"
-        rules={[{ required: true, message: "Checkin out date is required" }]}
-      >
-        <DatePicker placeholder="Check out" />
-      </Form.Item>
-      <Form.Item
-        name="adults"
-        rules={[{ required: true, message: "Please enter number of adults" }]}
-      >
-        <Input placeholder="adults" className="small-input"  type="number"/>
-      </Form.Item>
-      <Form.Item>
+          <AutoComplete
+            dataSource={
+              offersList ? offersList.map(renderSearchItem) : defaultOptions
+            }
+          >
+            <Input
+              className="search-input"
+              size="large"
+              placeholder="Where do you want to go?"
+              onChange={handleSearchChange}
+            />
+          </AutoComplete>
+        </Form.Item>
+        <Form.Item
+          name="checkin"
+          rules={[{ required: true, message: "Checkin date is required" }]}
+        >
+          <DatePicker placeholder="Checkin Date" disabledDate={disabledDate}/>
+        </Form.Item>
+        <Form.Item
+          name="checkout"
+          rules={[{ required: true, message: "Checkin out date is required" }]}
+        >
+          <DatePicker placeholder="Check out"  disabledDate={disabledDate}/>
+        </Form.Item>
+        <Form.Item
+          name="adults"
+          rules={[{ required: true, message: "Please enter number of adults" }]}
+        >
+          <Input placeholder="adults" className="small-input" type="number" />
+        </Form.Item>
+        <Form.Item>
           <Button type="primary" className="call-to-action" htmlType="submit">
             Search
           </Button>
         </Form.Item>
-    </Form>
+      </Form>
     </SearchWrapper>
   );
 };

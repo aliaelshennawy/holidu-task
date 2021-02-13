@@ -1,11 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import img from '../assets/loading.gif'
+import { connect } from 'react-redux';
+import { Spin } from 'antd';
 let Loading = ({ loading }) => (
 loading ?
-<div style={{ textAlign: 'center' }}>
-   <img src={img} alt='loading' />
-   <h1>LOADING</h1>
+<div>
+   <h1>Loading</h1>
+   <Spin size="large" />
 </div> :
 null
 );

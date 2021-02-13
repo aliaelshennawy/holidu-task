@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import banner from '../assets/search-background.jpg';
-// import banner from '../assets/banner.jpg';
 
 
 export const SearchWrapper = styled.div `

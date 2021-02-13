@@ -4,7 +4,7 @@ import Searchbar from "../components/searchBar";
 import {SearchWrapper} from './styles';
 import { connect ,  useDispatch} from 'react-redux'
 
-const Search = ({offersList}) => {
+const Search = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getOffers());

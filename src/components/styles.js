@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import pin from '../assets/pin.svg';
 
 export const OffersWrapper = styled.section `
+  margin-block: 40px;
   h1 {
     font-family: 'Roboto', serif;
     font-size: 1.125rem; 
@@ -34,7 +35,7 @@ export const OffersWrapper = styled.section `
   margin: 0 auto;
   @media (max-width: 768px) {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 40px auto;
   }
 `;
 export const OffersCard = styled.li`
@@ -133,6 +134,7 @@ export const OffersCard = styled.li`
     line-height: 40px;
   }
   @media (max-width: 768px) {
+
     .offer-wrapper {
       flex-direction: column;
     }
@@ -167,11 +169,11 @@ export const SearchWrapper = styled.div`
   .ant-picker {
     height: 50px;
   }
-  .large-input {
-    
-  }
   .small-input {
     width: 150px;
+  }
+  .ant-select-selector {
+    width: 500px;
   }
   .call-to-action {
     background-color: #FF6064;
@@ -182,6 +184,31 @@ export const SearchWrapper = styled.div`
     border: none;
     &:hover {
       background-color: #FF3A3D;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+    .ant-form {
+      flex-direction: column;
+    }
+    .ant-picker {
+      width: 100%;
+    }
+    .ant-form-item + .ant-form-item {
+      margin-inline-start: 0;
+    }
+    .ant-select-selector {
+      width: 100%;
+    }
+    .ant-input {
+      width: 100%
+    }
+    .call-to-action {
+      width: 100%;
+    }
+    .small-input {
+      width: 100%;
     }
   }
 `;

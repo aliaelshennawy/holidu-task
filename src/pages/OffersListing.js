@@ -1,5 +1,5 @@
-import  React, { useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import  React from "react";
+import { withRouter } from "react-router-dom";
 import Offers from "../components/offers";
 import Loading from '../components/loadingSpinner';
 import { useSelector} from "react-redux";

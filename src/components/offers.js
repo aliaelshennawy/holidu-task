@@ -1,6 +1,6 @@
 import  React from "react";
 import { OffersCard , OffersWrapper} from "./styles";
-import { Rate , Pagination} from 'antd';
+import { Rate } from 'antd';
 import SwiperCore, { Navigation } from 'swiper'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
