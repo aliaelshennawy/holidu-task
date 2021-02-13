@@ -1,3 +1,27 @@
+# This app is created to list best offers available for your upcoming travel
+
+[Check application demo](https://holidu-task.web.app/)
+
+# Used libraries
+
+Create React App: used for faster setup for a react app.
+Redux-Saga: for storing and managing state from a single source of truth.
+Axios: for hadnelling api calls.
+Antd: for handeling some of the UI elements in the application.
+Styled Components: for handeling styles and for better styles isolation.
+Swiper: used for application sliders.
+Redux-logger: for better debugging experience through application development.
+
+
+# Main Functionalities
+ Markup :
+  1. Search screen where you can choose the location you want to go to
+  2. Enter travel details such as chckin date, checkout date and number of adults
+  3. Click search and voila.
+  4. A list of all available offers will be available to garunte the best price and option
+  5. Check offer details and swipe between available offer images and view location on map
+  6. Check offers from your mobile/desktop or any screen size as it is responsive.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
